@@ -3,8 +3,8 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/GitProject" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/GitProject/JavaScrip/Phan-7" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/GitProject/Phan-5/Bai4" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/GitProject/Phan-7" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/GitProject/Source" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/GitProject/Source/bai4" vcs="Git" />
   </component>
 </project>
