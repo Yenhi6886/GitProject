@@ -19,15 +19,16 @@ Sin hoc
 
 <script>
   function getDiem() {
-    let a = +document.getElementById("vatly").value;
-    let b = +document.getElementById("hoahoc").value;
-    let c = +document.getElementById("sinhoc").value;
-    let d = (a + b + c) / 3;
-    d = d.toFixed(2);
-    let e = a + b + c;
+    let vatLy = +document.getElementById("vatly").value;
+    let hoaHoc = +document.getElementById("hoahoc").value;
+    let sinhHoc = +document.getElementById("sinhoc").value;
+    let trungBinh = (vatLy + hoaHoc + sinhHoc)/3 ;
+    trungBinh = trungBinh.toFixed(2);
+    let tong = vatLy + hoaHoc + sinhHoc;
+    tong = tong.toFixed(2);
 
-    document.getElementById("diemTb").innerHTML = "Diem trung binh: " + d;
-    document.getElementById("diemTong").innerHTML = "Diem tong " + e;
+    document.getElementById("diemTb").innerHTML = "Diem trung binh: " + trungBinh;
+    document.getElementById("diemTong").innerHTML = "Diem tong " + tong;
   }
 
 </script>
