@@ -7,7 +7,7 @@
 <body>
 <form>
 
-  Amount
+  <!--Amount
   <input type="number" id="amount"> <br> <br>
   From Currency
   <select id="fromCurrency">
@@ -42,8 +42,52 @@ result= amount*26000;
     result= amount;
   }
   document.getElementById("result").innerHTML = "Gia tri chuyen doi: "+result;
-}
+}-->
 
- </script>
+    <table style="width:100%">
+        <tr>
+            <td>Amount</td>
+            <td>From Currency</td>
+            <td>To Currency</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td> <input type="number" id="amount" value=""> </td>
+            <td>
+                <select name="" id="from-currency" style="width: 70%">
+                    <option value="1">USD</option>
+                    <option value="26000">VND</option>
+                    <option value="180">JPY</option>
+                </select>
+            </td>
+            <td>
+                <select name="" id="to-currency" style="width: 70%">
+                    <option value="1">USD</option>
+                    <option value="26000">VND</option>
+                    <option value="180">JPY</option>
+                </select>
+
+            </td>
+
+            <td>
+                <button type="button" onclick="convert()" style="background-color: yellow">Convert</button>
+            </td>
+        </tr>
+
+    </table>
+    <p id="result"></p>
+
+    <script>
+        function convert() {
+            let amount = +document.getElementById("amount").value;
+            let fromCurrency = +document.getElementById("from-currency").value;
+            let toCurrency = +document.getElementById("to-currency").value;
+            let money =  amount * toCurrency / fromCurrency;
+
+            document.getElementById("result").innerHTML = money;
+        }
+    </script>
+
+
 </body>
 </html>
