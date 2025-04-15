@@ -3,13 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <style>
-        table {
-            border: 1px solid black;
-            border-radius: 10px;
-            padding: 10px;
-        }
-    </style>
 </head>
 <body>
 <table>
@@ -18,6 +11,7 @@
         <td>
             <input type="date" id="dateMale" >
         </td>
+        <td>Female</td>
         <td>
             <input type="date" id="dateFemale" >
 
@@ -327,13 +321,13 @@
                 break;
         }
         if (tamHop && !tuHanhXung) {
-            document.getElementById("doTuongHop").innerHTML = "2 bạn rất hợp";
+            document.getElementById("doTuongHop").innerHTML = "=> 2 bạn rất hợp";
         } else if (!tamHop && !tuHanhXung) {
-            document.getElementById("doTuongHop").innerHTML = "2 bạn hợp";
+            document.getElementById("doTuongHop").innerHTML = "=> 2 bạn hợp";
         } else if (tamHop && tuHanhXung) {
-            document.getElementById("doTuongHop").innerHTML = "2 bạn bình thường";
+            document.getElementById("doTuongHop").innerHTML = "=> 2 bạn bình thường";
         } else {
-            document.getElementById("doTuongHop").innerHTML = "2 bạn khắc nhau";
+            document.getElementById("doTuongHop").innerHTML = "=> 2 bạn khắc nhau";
         }
     }
 
