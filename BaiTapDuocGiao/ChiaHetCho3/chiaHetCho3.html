@@ -9,22 +9,21 @@
 <script>
     let number = +prompt("Nhập số lượng bạn muốn in ra");
     let total = 0;
-
-    document.write("Các số chia hết cho 3 là: ");
+    let chiaHetCho3 = "";
 
     for (let i = 1; i <= number; i++) {
         total += i;
+
         if (i % 3 === 0) {
-            document.write(i + "&nbsp;&nbsp;");
+            chiaHetCho3 += i + " ";
         }
     }
-    if (total % 3 === 0) {
-        document.write("<br> "+"Tổng các số từ 1 đến " + number + " là: " + total + " và chia hết cho 3");
-    } else {
-        document.write("<br> "+"Tổng các số từ 1 đến " + number + " là: " + total + " và không chia hết cho 3");
-    }
 
+    document.getElementById("divisibleBy3").innerHTML = "Các số chia hết cho 3 là: " + chiaHetCho3;
+
+    document.write("<br>Tổng các số từ 1 đến " + number + " là: " + total);
 </script>
+
 
 </body>
 </html>
