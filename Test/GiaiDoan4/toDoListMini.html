@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="taskInput" name="nhapCongviec">
+<button onclick="addTask()">Thêm</button>
+<ul id="taskList"></ul>
+
+<script>
+    function addTask() {
+    const input = document.getElementById("taskInput");
+    const tastText = input.value.trim();
+    if (tastText === "") {
+        alert("Vui long nhap cong viec vao!");
+        return;
+    }
+
+    const li = document.createElement("li");
+
+    }
+
+</script>
+</body>
+</html>
