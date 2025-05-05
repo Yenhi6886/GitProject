@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="add-hoc-vien" type="button">Thêm mới học viên</button>
+<button id="edit-hoc-vien" type="button">Sửa thông tin học viên</button>
+<button id="delete-hoc-vien" type="button">Xóa học viên</button>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Mã học viên</th>
+        <th>Tên</th>
+        <th>Lớp</th>
+        <th>Email</th>
+        <th>Ngày sinh</th>
+    </tr>
+    </thead>
+    <tbody id="quanLyHocVien">
+
+    </tbody>
+</table>
+<script>
+    function dungChung() {
+        let MSV = prompt("Nhap ma hoc vien");
+        let name = prompt("Nhap ten hoc vien");
+        let lop = prompt("Nhap lop hoc");
+        let email = prompt("Nhap email");
+        let birthday = prompt("Nhap ngay sinh");
+        return {MSV, name, lop, birthday, email};
+    }
+
+    document.getElementById("add-hoc-vien").onclick = function () {
+        let add = dungChung();
+
+        let trungLap = document.querySelector(`tr[data-msv="${add.MSV}]`);
+        if (trungLap) {
+            alert("Đã tồn tại mã học viên này");
+            return;
+        }
+
+        let row = `
+        <tr data-msv="${add.MSV}">
+            <td>${add.MSV}</td>
+            <td>${add.name}</td>
+            <td>${add.lop}</td>
+            <td>${add.email}</td>
+            <td>${add.birthday}</td>
+        </tr>
+        `;
+        document.getElementById("quanLyHocVien").innerHTML += row;
+
+    }
+    document.getElementById("edit-hoc-vien").onclick = function () {
+        let input = prompt("Nhap ma hoc vien");
+        let row = document.querySelector(`tr[data-msv="${input}"]`);
+        if (!row) {
+            alert("Mã học viên không tồn tại");
+            return;
+        }
+
+        let edit = dungChung();
+        row.innerHTML = `
+            <td>${edit.MSV}</td>
+            <td>${edit.name}</td>
+            <td>${edit.lop}</td>
+            <td>${edit.email}</td>
+            <td>${edit.birthday}</td>
+        `;
+        row.setAttribute("data-msv", edit.MSV);
+    }
+
+    document.getElementById("delete-hoc-vien").onclick = function () {
+        let input = prompt("Nhap ma hoc vien");
+        let row = document.querySelector(`tr[data-msv="${input}"]`);
+        if (!row) {
+            alert("Mã học viên không tồn tại");
+            return;
+        }
+        let chacChan = confirm("Bạn chắc chắn muốn xóa học viên " + input + " không?")
+        if (chacChan) {
+            row.remove();
+            return;
+        }
+    }
+
+</script>
+</body>
+</html>
